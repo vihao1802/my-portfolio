@@ -17,7 +17,7 @@ const pjs = Plus_Jakarta_Sans({
 });
 
 function downloadPDF() {
-  const fileUrl = "/example.pdf"; // Path to your PDF file in the public folder
+  const fileUrl = "/Nodefair_CV.pdf"; // Path to your PDF file in the public folder
   const link = document.createElement("a");
   link.href = fileUrl;
   link.download = "TranViHao_CV.pdf"; // Name of the downloaded file
