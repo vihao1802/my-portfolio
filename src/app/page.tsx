@@ -258,7 +258,7 @@ export default function Home() {
               <div className="mt-4 space-y-2 text-left text-zinc-400">
                 <p>
                   TOEIC ETS Listening & Reading:{" "}
-                  <strong className="text-white">Pending</strong>
+                  <strong className="text-white">920/990 point (2024)</strong>
                 </p>
                 <p>
                   TOEIC ETS Writing & Speaking:{" "}
