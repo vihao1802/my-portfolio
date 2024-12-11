@@ -9,14 +9,19 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@react-pdf-viewer/core": "^3.12.0",
+    "@react-pdf-viewer/default-layout": "^3.12.0",
     "framer-motion": "^11.4.0",
     "lucide-react": "^0.438.0",
     "next": "14.2.7",
+    "next-sanity": "^9.8.25",
+    "pdfjs-dist": "^3.4.120",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "sanity": "^3.66.1"
   },
   "devDependencies": {
-    "@types/node": "^20",
+    "@types/node": "^20.17.9",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "postcss": "^8",
