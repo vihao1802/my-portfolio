@@ -16,11 +16,9 @@ const PDFViewerSection = ({ pdfFile }: { pdfFile: string }) => {
 
   return (
     <div className="h-[650px]">
-      <SlideToTop>
-        <h1 id="my-cv" className="text-[45px] text-white mb-4">
-          MY CV
-        </h1>
-      </SlideToTop>
+      <h1 id="my-cv" className="text-[32px] text-blue-500 mb-4 pt-14 mt-1">
+        MY CV
+      </h1>
       <Worker
         workerUrl={`https://unpkg.com/pdfjs-dist@3.4.120/build/pdf.worker.min.js`}
       >

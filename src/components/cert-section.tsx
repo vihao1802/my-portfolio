@@ -1,5 +1,5 @@
 "use client";
-import SlideToLeft from "@/components/SlideToLeft";
+import SlideToRight from "@/components/SlideToRight";
 
 const CertSection = ({
   toeicReadLisScore,
@@ -10,23 +10,23 @@ const CertSection = ({
 }) => {
   return (
     <div>
-      <SlideToLeft>
-        <h1 id="cert" className="text-[45px] text-orange-500">
+      <SlideToRight className="mt-1">
+        <h1 id="cert" className="text-[32px] text-orange-500 pt-14">
           CERTIFICATES
         </h1>
-      </SlideToLeft>
-      <SlideToLeft delay={0.3}>
-        <div className="mt-4 space-y-2 text-left text-zinc-400 text-[20px]">
-          <p className="flex justify-between">
+      </SlideToRight>
+      <SlideToRight delay={0.3}>
+        <div className="mt-4 space-y-4 text-left text-zinc-400 text-[20px]">
+          <p className="flex flex-col md:flex-row justify-between">
             TOEIC ETS Listening & Reading{" "}
             <strong className="text-white">{toeicReadLisScore}</strong>
           </p>
-          <p className="flex justify-between">
+          <p className="flex flex-col md:flex-row justify-between">
             TOEIC ETS Writing & Speaking{" "}
             <strong className="text-white">{toeicWriteSpeakScore}</strong>
           </p>
         </div>
-      </SlideToLeft>
+      </SlideToRight>
     </div>
   );
 };

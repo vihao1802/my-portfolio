@@ -1,7 +1,6 @@
 "use client";
-import Image from "next/image";
 import ProjectSection from "@/components/project-section";
-import { poppins, pjs } from "@/constants";
+import { poppins } from "@/constants";
 import IntroduceSection from "@/components/introduce-section";
 import Footer from "@/components/footer";
 import CertSection from "@/components/cert-section";
@@ -10,6 +9,7 @@ import PDFViewerSection from "@/components/pdf-viewer-section";
 import { useEffect, useState } from "react";
 import { getPage } from "../../sanity/sanity-utils";
 import { Page } from "../../types/Page";
+import Header from "@/components/Header";
 
 export default function Home() {
   const [page, setPage] = useState<Page>();
@@ -24,61 +24,32 @@ export default function Home() {
 
   return (
     <main>
-      <div className="flex justify-evenly items-center bg-zinc-900">
-        <div>
-          <Image src={"/logo.png"} width={80} height={80} alt="Logo" />
-        </div>
-        <div
-          className={`flex flex-row gap-[70px] ${pjs.className} font-semibold text-[16px]`}
-        >
-          <div className="transition ease-in-out delay-50 p-1 border-b-2 border-zinc-900 hover:border-white cursor-pointer">
-            <p>Home</p>
-          </div>
-          <div className="transition ease-in-out delay-50 p-1 border-b-2 border-zinc-900 hover:border-white cursor-pointer">
-            <p>
-              <a href="#projects">Projects</a>
-            </p>
-          </div>
-          <div className="transition ease-in-out delay-50 p-1 border-b-2 border-zinc-900 hover:border-white cursor-pointer">
-            <p>
-              <a href="#cert">Certificates</a>
-            </p>
-          </div>
-          <div className="transition ease-in-out delay-50 p-1 border-b-2 border-zinc-900 hover:border-white cursor-pointer">
-            <p>
-              <a href="#my-cv">My CV</a>
-            </p>
-          </div>
-          <div className="transition ease-in-out delay-50 p-1 border-b-2 border-zinc-900 hover:border-white cursor-pointer">
-            <p>
-              <a href="#contact">Contact</a>
-            </p>
-          </div>
-        </div>
-      </div>
-      <div>
+      <Header />
+      <div className="w-full lg:w-[calc(100%-250px)] h-[100%] ml-auto px-4 lg:px-12 mt-10 lg:mt-0">
         {page && (
-          <div
-            className={`${poppins.className} py-[100px] max-w-[720px] mx-auto text-center space-y-14`}
-          >
+          <div className={`${poppins.className} py-8 text-left`}>
             <IntroduceSection
               occupation={page.occupation}
               yourName={page.yourName}
               introduction={page.introduction}
+              frontend={page.frontend}
+              backend={page.backend}
+              others={page.others}
             />
-            <ResourceSection githubProfile={page.githubProfile} />
-            <ProjectSection />
+            <ResourceSection
+              githubProfile={page.githubProfile}
+              facebookProfile={page.facebookProfile}
+            />
             <CertSection
               toeicReadLisScore={page.toeicReadLisScore}
               toeicWriteSpeakScore={page.toeicWriteSpeakScore}
             />
+            <ProjectSection />
             <PDFViewerSection pdfFile={page.pdfFile} />
+            <Footer contactEmail={page.contactEmail} location={page.location} />
           </div>
         )}
       </div>
-      {page && (
-        <Footer contactEmail={page.contactEmail} location={page.location} />
-      )}
     </main>
   );
 }
