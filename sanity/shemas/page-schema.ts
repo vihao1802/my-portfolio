@@ -1,5 +1,3 @@
-import { title } from "process";
-
 const page = {
   name: "page",
   title: "Pages",
@@ -27,8 +25,31 @@ const page = {
       rows: 5,
     },
     {
+      name: "frontend",
+      title: "Frontend Technologies",
+      type: "text",
+      rows: 5,
+    },
+    {
+      name: "backend",
+      title: "Backend Technologies",
+      type: "text",
+      rows: 5,
+    },
+    {
+      name: "others",
+      title: "Other Technologies",
+      type: "text",
+      rows: 5,
+    },
+    {
       name: "githubProfile",
       title: "Github Profile URL",
+      type: "url",
+    },
+    {
+      name: "facebookProfile",
+      title: "Facebook Profile URL",
       type: "url",
     },
     {
